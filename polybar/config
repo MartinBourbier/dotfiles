@@ -1,0 +1,100 @@
+[colors]
+background = #00
+background-alt = #3306080a
+primary = #fff
+alert = #f7768e
+
+[bar/top]
+bottom = false
+monitor = eDP
+
+scroll-up = "#i3.prev"
+scroll-down = "#i3.next"
+
+background = ${colors.background}
+
+border-size = 0
+border-color = #00000000
+
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "MesloLGS NF:style=Regular:size=11;0"
+font-1 = Nerd Font:pixelsize=10;1
+
+modules-left = i3 xwindow
+modules-right = date wlan battery pulseaudio
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/i3]
+type = internal/i3
+
+index-sort = true
+enable-click = true
+
+[module/wlan]
+type = internal/network
+interface = wlp4s0
+interval = 3.0
+
+format-connected = %{A1:networkmanager_dmenu:}直 <label-connected>%{A}
+label-connected = %essid%
+format-disconnected = %{A1:networkmanager_dmenu:}睊 %{A}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%a %b %d"
+time = %H:%M
+
+format =  <label>
+label = %time% %date%
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = AC0
+
+full-at = 99
+
+format-charging =  <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full =  <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-1-foreground = ${colors.primary}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_05_00.6.analog-stereo
+
+use-ui-max = true
+
+interval = 5
+
+format-volume = <ramp-volume> <label-volume>
+
+label-muted = ﱝ
+label-muted-foreground = #666
+
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+
