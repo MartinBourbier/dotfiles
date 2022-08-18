@@ -193,7 +193,7 @@ exec_always --no-startup-id feh --bg-scale .wallpaper/main_wallpaper.jpg
 
 # Gaps
 gaps inner 10
-gaps outer 5
+gaps outer 0
 
 # Remove borders
 default_border none
