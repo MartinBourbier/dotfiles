@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Set wallpaper
-exec_always --no-startup-id feh --bg-scale .wallpaper/main_wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale .config/wallpapers/main_wallpaper.jpg
 
 # Gaps
 gaps inner 10
